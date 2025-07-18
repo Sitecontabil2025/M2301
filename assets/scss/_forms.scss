@@ -1,0 +1,35 @@
+.form{
+    &-control, &-select{
+        font-size: 1.4rem;
+        padding: .7rem 1rem;
+        resize: none;
+    }
+}
+
+.select2{
+    border-radius: .375rem !important;
+    span, &-results li, &-search__field{
+        font-size: 1.4rem !important;
+        &:focus{
+            border-color: lighten($primary, 20%) !important;  
+        }
+    }
+    
+    &-selection--single{
+        height: auto !important;
+        padding: .7rem 1rem .7rem 1rem !important;
+        border-color: #dee2e6 !important;
+    }
+
+    &-dropdown{
+        &--below{
+            border-color: lighten($primary, 20%) !important; 
+        }
+    }
+}
+
+
+.select2-container--bootstrap-5.select2-container--focus .select2-selection, .select2-container--bootstrap-5.select2-container--open .select2-selection{
+    box-shadow: none !important;
+    border-color: lighten($primary, 20%) !important;
+}

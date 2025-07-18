@@ -1,0 +1,61 @@
+.container{
+    &-banner{
+        width: 100%;
+        min-height: 600px;
+        background: {
+            image: url(#{$urlImg}banner.jpg);
+            color: $gray;
+            position: center;
+            size: cover;
+        };
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-background{
+        background: {
+            image: url(#{$urlImg}home-bg.png);
+            size: cover;
+        };
+    }
+    &-team{
+        min-height: 400px;
+        background: {
+            image: url(#{$urlImg}home-scroll-section-bg.jpg);
+            size: cover;
+        }; 
+
+        @media screen and (min-width: 1024px){
+            min-height: 800px;
+        }
+    }
+
+    &-menu{
+        width: 230px;
+        height: 100%;
+        background-color: $white;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: all ease .7s;
+        z-index: 1030;
+        text-align: end;
+    }
+}
+
+.bg{
+    &-menu{
+        width: 100%;
+        height: 100%;
+        background-color: rgba($black, .3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        transition: all ease .7s;
+        z-index: 1025;
+    }
+}

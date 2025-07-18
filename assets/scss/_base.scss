@@ -1,0 +1,49 @@
+// RESET --------------------
+html{
+    font-size: 10px;
+}
+
+body{
+    scroll-behavior: smooth;
+    font: {
+        family: $fontFamily;
+        size: 1.4rem;
+    };
+    color: $dark;
+    background-color: $lightgray;
+}
+
+a{
+    color: currentColor;
+    text-decoration: none !important;
+    transition: all ease .7s;
+    &:not([class]){
+        &:hover{
+            color: $primary;
+        }
+    }
+    
+}
+
+input, button, textarea, select{
+    &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+button{
+    background: transparent;
+    border: none;
+    transition: all ease .7s;
+}
+
+// SELECT TEXT --------------------
+::selection{
+    color: $white;
+    background: $primary;
+}
+::-moz-selection{
+    color: $white;
+    background: $primary;
+}

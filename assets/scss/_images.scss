@@ -1,0 +1,22 @@
+.img{
+    width: 100%;
+    height: auto;
+
+    &-logo{
+        @extend .img;
+        max-width: 260px
+    }
+
+    &-services{
+        @extend .img;
+        min-height: 300px;
+        object-fit: cover;
+    }
+
+    &-team{
+        @extend .img;
+        height: 700px;
+        object-fit: cover;
+        
+    }
+}

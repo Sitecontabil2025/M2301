@@ -1,0 +1,30 @@
+.icon{
+    &-mission{
+        font-size: 6rem;
+        color: $primary;
+        margin-bottom: 5rem;
+    }
+
+    &-simple{
+        @include square(60px);
+        @include flex-center;
+        font-size: 2.2rem;
+        color: lighten($primary, 10%);
+        border: 2px solid currentColor;
+        border-radius: 50%;
+        margin-right: 2rem;
+    }
+
+    &-socialMedia{
+        @include square(35px);
+        @include flex-center;
+        font-size: 1.6rem;
+        color: $dark;
+        border: 1px solid $dark;
+        border-radius: .5rem;
+        &:hover{
+            color: $white;
+            background-color: $dark;
+        }
+    }
+}

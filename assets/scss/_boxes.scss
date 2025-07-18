@@ -1,0 +1,24 @@
+.box{
+    &-mission{
+        height: 100%;
+        background-color: $white;
+        text-align: center;
+        border-bottom: .5rem solid $primary;
+        padding: 5rem;
+    }
+
+    &-simple{
+        display: flex;
+        margin-top: 5rem;
+    }
+
+    &-news{
+        display: block;
+        height: 100%;
+        &:hover{
+            h2{
+                color: $primary;
+            }
+        }
+    }
+}

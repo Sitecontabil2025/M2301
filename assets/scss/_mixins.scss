@@ -1,0 +1,89 @@
+// PSEUDO ELEMENT --------------------
+// Define um mixin para configurar estilos de pseudo-elementos
+@mixin pseudo($content, $pos, $display){
+    content: $content;
+    position: $pos;
+    display: $display;
+}
+
+// FONT STYLES --------------------
+// Define um mixin para configurar estilos de fonte
+@mixin font-stack($size: false, $weight: false, $color: false, $transform: false, $family: false) { 
+    @if $size { font-size: $size; } // Define o tamanho da fonte se fornecido
+    @if $weight { font-weight: $weight; } // Define o peso da fonte se fornecido
+    @if $color { color: $color; } // Define a cor do texto se fornecida
+    @if $transform { text-transform: $transform; } // Define a transformação do texto se fornecida
+    @if $family { font-family: $family; } // Define a família da fonte se fornecida
+}
+
+// BACKGROUND COVER --------------------
+// Define um mixin para configurar estilos de fundo de imagem
+@mixin bg-stack($image, $size, $position, $repeat, $attachment: false){
+    background-image: $image; // Define a imagem de fundo
+    background-size: $size; // Define o tamanho da imagem de fundo
+    background-position: $position; // Define a posição da imagem de fundo
+    background-repeat: $repeat; // Define a repetição da imagem de fundo
+
+    @if $attachment == true{
+        background-attachment: fixed; // Define se a imagem de fundo é fixa
+    }
+}
+
+// FLEX CENTER --------------------
+// Define um mixin para centralizar elementos flexíveis
+@mixin flex-center($display: inline-flex, $position: center){
+    display: $display; // Define o tipo de display do elemento flexível
+    justify-content: $position; // Define o alinhamento horizontal do conteúdo
+    align-items: $position; // Define o alinhamento vertical do conteúdo
+}
+
+// RESET LIST --------------------
+// Define um mixin para resetar estilos de listas
+@mixin reset-list($style: none, $spacing: 0){
+    list-style: $style; // Define o estilo da lista
+    margin: $spacing; // Define a margem da lista
+    padding: $spacing; // Define o preenchimento da lista
+}
+
+// SQUARE --------------------
+// Define um mixin para criar elementos quadrados
+@mixin square($value){
+    width: $value; // Define a largura do elemento
+    height: $value; // Define a altura do elemento
+}
+
+// FONT WEIGHT --------------------
+// Aplica estilos de peso de fonte a classes de acordo com valores em $weights
+@each $weight in $weights{
+    .font-#{$weight}{
+        font-weight: $weight !important; // Aplica o peso da fonte às classes
+    }
+}
+
+// FONT STYLE --------------------
+// Aplica estilos a classes de acordo com valores em $styles
+@each $style in $styles{
+    .font-#{$style}{
+        font-style: $style; // Aplica o estilo da fonte às classes
+    }
+}
+
+// FONT SIZE --------------------
+// Aplica estilos de tamanho de fonte a classes de acordo com valores em $font-size-array
+// @each $value in $font-size-array {
+//     .font-size-#{$value} {
+//         font-size: $value + rem !important; // Aplica o tamanho da fonte às classes
+//     }
+// }
+
+// COLORS --------------------
+// Aplica estilos de cor a classes de acordo com valores em $colors-array
+@each $color-name, $color-value in $colors-array{
+    .color-#{$color-name}{
+        color: $color-value !important; // Aplica a cor do texto às classes
+    }
+
+    .bg-#{$color-name}{
+        background: $color-value !important; // Aplica a cor de fundo às classes
+    }
+}
